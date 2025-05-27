@@ -41,16 +41,16 @@ src/
 - Postman for API testing
 
 ---
-
+## Base Path `/api/students`
 ## 🔌 API Endpoints
 
 | Method | Endpoint           | Description               |
 |--------|--------------------|---------------------------|
-| POST   | `/students`        | Add a new student         |
-| GET    | `/students`        | Get all students          |
-| GET    | `/students/{id}`   | Get student by ID         |
-| PUT    | `/students/{id}`   | Update student by ID      |
-| DELETE | `/students/{id}`   | Delete student by ID      |
+| POST   | `/add`        | Add a new student         |
+| GET    | `/get`        | Get all students          |
+| GET    | `/get/{id}`   | Get student by ID         |
+| PUT    | `/insert/{id}`   | Update student by ID      |
+| DELETE | `/delete/{id}`   | Delete student by ID      |
 
 ---
 
