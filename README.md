@@ -79,9 +79,9 @@ spring.jpa.show-sql=true
 
 ```json
 {
-  "name": "John Doe",
-  "email": "john@example.com",
-  "course": "Java Backend"
+  "name": "Nitish saini",
+  "email": "nitishsaini@gmail.com",
+  "course": "Java"
 }
 ```
 
