@@ -25,8 +25,28 @@ public class StudentService {
     public Student getStudentById(Long id) {
         return sturepo.findById(id).orElse(null);
     }
-    public String deleteByid(Long id){
-        sturepo.deleteById(id);
-        return "Deleted successfully";
+
+    public String updateStudentById(Long id, Student updatedStudent){
+        Student find= sturepo.findById(id).orElse(null);
+        if(find!=null){
+          find.setName(updatedStudent.getName());
+          find.setEmail(updatedStudent.getEmail());
+          find.setCourse(updatedStudent.getCourse());
+          sturepo.save(find);
+          return "Exiting student updated";
+        }else{
+            return "Student not Found";
+        }
+    }
+
+    public String deleteBid(Long id){
+        if(sturepo.existsById(id)){
+            sturepo.deleteById(id);
+            return "Deleted successfully";
+        }else{
+            return "Records not Found";
+        }
+        
+
     }
 }

@@ -21,22 +21,21 @@ public class StudentManagementController {
         studentService.save(name, email, course); // Call service method
         return "Student added";
     }
-    @GetMapping("/student")
+    @GetMapping("/get")
     public List<Student> getAllStudents() {
         return studentService.getStudent(); // fetch all students
     }
-    @GetMapping("/students/{id}")
+    @GetMapping("/get/{id}")
     public Student getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id); // Calls service to fetch by ID
     }
-//    public String putStudentById(@PathVariable Long id){
-//
-//    }
-    @DeleteMapping("/delete/{id}")
-    public String deleteById(@PathVariable Long id){
-        return studentService.deleteByid(id);
+    @PutMapping("/insert/{id}")
+    public String updateStudent(@PathVariable Long id, @RequestBody Student updatedStudent) {
+        return studentService.updateStudentById(id, updatedStudent);
     }
 
-
-
+    @DeleteMapping("/delete/{id}")
+    public String deleteById(@PathVariable Long id){
+        return studentService.deleteBid(id);
+    }
 }
